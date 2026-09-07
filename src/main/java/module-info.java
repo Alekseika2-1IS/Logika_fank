@@ -1,4 +1,7 @@
-module Logika_fank {
-    requires javafx.controls;
-    exports org.example;
+// Дескриптор модуля (JPMS — модульная система Java, появилась в Java 9).
+// Файл говорит платформе: какие внешние библиотеки нужны проекту
+// и какие его пакеты разрешено видеть снаружи.
+module Logika_fank { // Объявляем модуль с именем Logika_fank (по названию проекта)
+    requires javafx.controls; // Зависимость от модуля javafx.controls: кнопки, поля, списки, модальные окна
+    exports org.example; // Открываем пакет org.example (классы Main и NamesForm) другим модулям
 }

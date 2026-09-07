@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Декларация XML: версия формата 1.0 и кодировка UTF-8 (чтобы русский читался корректно) -->
+
+<!-- Корневой элемент Maven-проекта; атрибуты xmlns указывают на официальную схему pom.xml -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>Logika_fank</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion> <!-- Версия самого формата pom.xml (для Maven 3 всегда 4.0.0) -->
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <groupId>org.example</groupId> <!-- Идентификатор "организации" проекта (часть координат в репозитории Maven) -->
+    <artifactId>Logika_fank</artifactId> <!-- Имя артефакта проекта (вторая часть координат) -->
+    <version>1.0-SNAPSHOT</version> <!-- Версия проекта; SNAPSHOT = "в разработке, не релиз" -->
+
+    <properties> <!-- Блок свойств сборки -->
+        <maven.compiler.source>17</maven.compiler.source> <!-- Версия Java, на которой написан код -->
+        <maven.compiler.target>17</maven.compiler.target> <!-- Версия Java, под которую компилируем байткод -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Кодировка исходников (чтобы русский не стал кракозябрами) -->
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>17.0.2</version>
+    <dependencies> <!-- Блок сторонних библиотек, от которых зависит проект -->
+        <dependency> <!-- Описание одной зависимости -->
+            <groupId>org.openjfx</groupId> <!-- Владелец библиотеки JavaFX в центральном репозитории Maven -->
+            <artifactId>javafx-controls</artifactId> <!-- Сама библиотека: кнопки, поля, списки, окна, алерты -->
+            <version>17.0.2</version> <!-- Версия библиотеки (подобрана под наш JDK 17) -->
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
-                <configuration>
-                    <mainClass>org.example.Main</mainClass>
+    <build> <!-- Блок настройки сборки проекта -->
+        <plugins> <!-- Список плагинов — программ, работающих при сборке и запуске -->
+            <plugin> <!-- Описание одного плагина -->
+                <groupId>org.openjfx</groupId> <!-- Владелец плагина -->
+                <artifactId>javafx-maven-plugin</artifactId> <!-- Плагин для корректного запуска JavaFX (команда mvn javafx:run) -->
+                <version>0.0.8</version> <!-- Версия плагина -->
+                <configuration> <!-- Настройки плагина -->
+                    <mainClass>org.example.Main</mainClass> <!-- Точка входа: класс, в котором лежит main() -->
                 </configuration>
             </plugin>
         </plugins>
