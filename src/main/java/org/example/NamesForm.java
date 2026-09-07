@@ -1,5 +1,7 @@
 package org.example;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -40,7 +42,10 @@ public class NamesForm {
         addButton.setOnAction(e -> addName());
 
         Button deleteButton = new Button();
-        deleteButton.setGraphic(new Label("🗑")); // 2.b: кнопка с изображением
+        ImageView icon = new ImageView(new Image(NamesForm.class.getResourceAsStream("/delete.png")));
+        icon.setFitWidth(24);
+        icon.setFitHeight(24);
+        deleteButton.setGraphic(icon);
         deleteButton.setTooltip(new Tooltip("Удалить выбранный элемент"));
         deleteButton.setOnAction(e -> deleteSelected());
 
