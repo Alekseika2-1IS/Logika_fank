@@ -33,7 +33,11 @@ public class Main extends Application {
 
         grid.add(resultLabel, 0, 3, 2, 1);
 
-        Scene scene = new Scene(grid, 380, 260);
+        Button namesButton = new Button("Форма списка имён");
+        namesButton.setOnAction(e -> NamesForm.open());
+        grid.add(namesButton, 0, 4, 2, 1);
+
+        Scene scene = new Scene(grid, 380, 300);
         stage.setTitle("Демоэкзамен: ввод/вывод");
         stage.setScene(scene);
         stage.show();
