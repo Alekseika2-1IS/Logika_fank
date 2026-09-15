@@ -37,7 +37,11 @@ public class Main extends Application { // Главный класс прило�
         namesButton.setOnAction(e -> NamesForm.open()); // По клику открыть окно списка имён (NamesForm.open())
         grid.add(namesButton, 0, 4, 2, 1); // Кнопка в столбец 0, строку 4, растянуть на 2 столбца
 
-        Scene scene = new Scene(grid, 380, 300); // Создаём сцену 380x300 px с нашей сеткой внутри
+        Button apiButton = new Button("Клиент внешнего API"); // Кнопка перехода к форме клиента API (модуль 4)
+        apiButton.setOnAction(e -> ApiForm.open()); // По клику открыть окно API-клиента (ApiForm.open())
+        grid.add(apiButton, 0, 5, 2, 1); // Кнопка в столбец 0, строку 5, растянуть на 2 столбца
+
+        Scene scene = new Scene(grid, 380, 380); // Создаём сцену 380x380 px с нашей сеткой внутри (увеличено для 3 кнопок)
         stage.setTitle("Демоэкзамен: ввод/вывод"); // Заголовок окна
         stage.setScene(scene); // Помещаем сцену в окно
         stage.show(); // Показываем окно на экране
